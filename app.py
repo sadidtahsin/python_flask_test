@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    return 'Hello Tamim!!! How are You!!!'
 
 @app.route('/sensor/<name>/<age>',methods = ['POST', 'GET'])
 def sensor(name=None,age=None):
