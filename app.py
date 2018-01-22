@@ -10,11 +10,11 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     client = MongoClient('mongodb://<tamim_tm>:<Tamuorin1>@ds111618.mlab.com:11618/test_tamim')
-    db=client.test
-    print(db)
+    
+    print(client)
     print('\n')
     print(client)
-    db.value.insert_one("{'name':'tamim','id':'201702080'}")
+    client.test.insert_one("{'name':'tamim','id':'201702080'}")
     return 'Hello Tamim!!! How are Boy!!!'
 
 @app.route('/sensor/<name>/<age>',methods = ['POST', 'GET'])
