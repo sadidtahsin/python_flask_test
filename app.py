@@ -10,7 +10,11 @@ db=client.get_database('test_tamim')
 @app.route('/')
 def hello_world():
     
-    db.test.insert_one("{'name':'tamim','id':'201702080'}")
+    collection = db['test']
+    cursor = collection.find({})
+    for document in cursor:
+        print(document)
+        print('\n')
     return 'Hello Tamim!!! How are Boy!!!'
 
 @app.route('/sensor/<name>/<age>',methods = ['POST', 'GET'])
