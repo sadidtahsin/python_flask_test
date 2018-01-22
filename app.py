@@ -9,7 +9,7 @@ client = MongoClient('mongodb://tamim_tm:Tamuorin1@ds111618.mlab.com:11618/test_
 db=client.get_database('test_tamim')
 @app.route('/')
 def hello_world():
-    
+    db.test.insert_one({"name":"tamim","id":"201702080"})
     collection = db['test']
     cursor = collection.find({})
     for document in cursor:
