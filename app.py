@@ -1,14 +1,12 @@
 from flask import Flask
 from flask import request
-from pymongo import MongoClient
+# from pymongo import MongoClient
 app = Flask(__name__)
 #test
-client = MongoClient('localhost:27017')
-db=client.sensor
+# client = MongoClient('localhost:27017')
+# db=client.sensor
 
-print(client)
-print(db)
-print("done")
+
 @app.route('/')
 def hello_world():
     return 'Hello, World!'
