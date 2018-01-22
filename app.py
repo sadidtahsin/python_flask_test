@@ -5,16 +5,12 @@ from pymongo import MongoClient
 app = Flask(__name__)
 #test
 
-
-
+client = MongoClient('mongodb://tamim_tm:Tamuorin1@ds111618.mlab.com:11618/test_tamim')
+db=client.get_database('test_tamim')
 @app.route('/')
 def hello_world():
-    client = MongoClient('mongodb://<tamim_tm>:<Tamuorin1>@ds111618.mlab.com:11618/test_tamim')
     
-    print(client)
-    print('\n')
-    print(client)
-    client.test.insert_one("{'name':'tamim','id':'201702080'}")
+    db.test.insert_one("{'name':'tamim','id':'201702080'}")
     return 'Hello Tamim!!! How are Boy!!!'
 
 @app.route('/sensor/<name>/<age>',methods = ['POST', 'GET'])
