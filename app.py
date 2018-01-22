@@ -4,13 +4,14 @@ from flask import request
 from pymongo import MongoClient
 app = Flask(__name__)
 #test
-# client = MongoClient('localhost:27017')
-# db=client.sensor
+client = MongoClient('mongodb://<dbuser>:<dbpassword>@ds111618.mlab.com:11618/test_tamim')
+db=client.test
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello Tamim!!! How are You!!!'
+    db.value.insert_one("{'name':'tamim','id':'201702080'}")
+    return 'Hello Tamim!!! How are Boy!!!'
 
 @app.route('/sensor/<name>/<age>',methods = ['POST', 'GET'])
 def sensor(name=None,age=None):
