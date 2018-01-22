@@ -4,12 +4,16 @@ from flask import request
 from pymongo import MongoClient
 app = Flask(__name__)
 #test
-client = MongoClient('mongodb://<dbuser>:<dbpassword>@ds111618.mlab.com:11618/test_tamim')
-db=client.test
+
 
 
 @app.route('/')
 def hello_world():
+    client = MongoClient('mongodb://<tamim_tm>:<Tamuorin1>@ds111618.mlab.com:11618/test_tamim')
+    db=client.test
+    print(db)
+    print('\n')
+    print(client)
     db.value.insert_one("{'name':'tamim','id':'201702080'}")
     return 'Hello Tamim!!! How are Boy!!!'
 
