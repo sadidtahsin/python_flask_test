@@ -5,7 +5,7 @@ from flask import json
 app = Flask(__name__)
 #test
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     msg="Hello Tamim"
     data= {"fulfillmentText":" ","fulfillmentMessages":"[{'text': {'text':[msg]}}]","source":""}
