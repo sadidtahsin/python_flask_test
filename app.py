@@ -9,7 +9,7 @@ app = Flask(__name__)
 def hello_world():
     msg="Hello Tamim"
     return jsonify(
-        fulfillmentText=g.user.username,
+        fulfillmentText=" ",
         fulfillmentMessage=[{'text': {'text':[msg]}}],
         source=""
     )
