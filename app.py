@@ -10,7 +10,7 @@ def hello_world():
     msg="Hello Tamim"
     return jsonify(
         fulfillmentText=" ",
-        fulfillmentMessage=[{'text': {'text':[msg]}}],
+        fulfillmentMessages=[{'text': {'text':[msg]}}],
         source=""
     )
 
