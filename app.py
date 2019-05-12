@@ -1,13 +1,18 @@
 import os
 from flask import Flask
 from flask import request
+from flask import jsonify
 app = Flask(__name__)
 #test
 
 @app.route('/')
 def hello_world():
-    
-    return 'Hello Sadid Tahsin Tamim!!! How are Boy!!!'
+    msg="Hello Tamim"
+    return jsonify(
+        fulfillmentText=g.user.username,
+        fulfillmentMessage=[{'text': {'text':[msg]}}],
+        source=""
+    )
 
 
 
