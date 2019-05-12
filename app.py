@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from flask import request
-from flask import json
+from flask import jsonify
 app = Flask(__name__)
 #test
 
@@ -10,7 +10,7 @@ def hello_world():
     msg="Hello Tamim"
     data= '{fulfillmentText=" ",fulfillmentMessages=[{"text": {"text":[msg]}}],source=""}'
     response = app.response_class(
-        response=json.dumps(data),
+        response=jsonify({fulfillmentText=" ",fulfillmentMessages=[{"text": {"text":[msg]}}],source=""}),
         status=200,
         mimetype='application/json'
     )
