@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     msg="Hello Tamim"
-    data= {"fulfillmentText":" ","fulfillmentMessages":"[{'text': {'text':[msg]}}]","source":""}
+    data= {"fulfillmentText":" ","fulfillmentMessages":[{'text': {'text':[msg]}}],"source":""}
     response = app.response_class(
         response=json.dumps(data),
         status=200,
