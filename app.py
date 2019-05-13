@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
     #msg={"text": {"text": ["We could find few matching products based on your query"]}},{"text": {"text": ["2nd text"]}}
-    msg={ "fulfillmentText": "This is a text response", "fulfillmentMessages": [ { "card": { "title": "card title", "subtitle": "card text", "imageUri": "https://assistant.google.com/static/images/molecule/Molecule-Formation-stop.png", "buttons": [ { "text": "button text", "postback": "https://assistant.google.com/" } ] } } ], "source": "example.com", "payload": { "google": { "expectUserResponse": True, "richResponse": { "items": [ { "simpleResponse": { "textToSpeech": "this is a simple response for tamim" } } ] } }, "facebook": { "text": "Hello, Facebook!" }, "slack": { "text": "This is a text response for Slack." } } }
+    msg={ "fulfillmentText": "This is a text response", "fulfillmentMessages": [], "source": "example.com", "payload": { "google": { "expectUserResponse": True, "richResponse": { "items": [ { "simpleResponse": { "textToSpeech": "This is a Basic Card:" } }, { "basicCard": { "title": "card title", "image": { "url": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png", "accessibilityText": "Google Logo" }, "buttons": [ { "title": "Button Title", "openUrlAction": { "url": "https://www.google.com" } } ], "imageDisplayOptions": "WHITE" } } ] } } }, "outputContexts": [], "followupEventInput": {} }
     data= {"fulfillmentText":" Well Done ","fulfillmentMessages":[{"text": {"text": ["We could find few matching products based on your query"]}},{"text": {"text": ["2nd text"]}}],"source":""}
     response = app.response_class(
         response=json.dumps(msg),
