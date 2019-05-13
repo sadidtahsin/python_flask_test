@@ -7,20 +7,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def hello_world():
-    msg={
-    "text": {
-      "text": [
-        "We could find few matching products based on your query"
-      ]
-    }
-  },
-  {
-    "text": {
-      "text": [
-        "2nd text"
-      ]
-    }
-  }
+    msg={"text": {"text": ["We could find few matching products based on your query"]}},{"text": {"text": ["2nd text"]}}
     data= {"fulfillmentText":" Well Done ","fulfillmentMessages":[{'text': {'text':[msg]}}],"source":""}
     response = app.response_class(
         response=json.dumps(data),
